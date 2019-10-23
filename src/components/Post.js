@@ -4,18 +4,19 @@ import User from './User';
 export default class Post extends Component {
     render() {
         return (
-            <div className="post">
+            <div key="id" className="post">
                 <User 
-                    src="https://www.loyatic.eu/wp-content/uploads/2017/11/iStock_000020004182Medium1.jpg"
-                    alt="john doe"
-                    name="john doe"
+                    src={this.props.photo}
+                    alt={this.props.altname}
+                    name={this.props.name}
+                    min
                 />
                 <img src={this.props.src} alt={this.props.alt}></img>
                 <div className="post__name">
-                    some account
+                    {this.props.name}
                 </div>
                 <div className="post__descr">
-                    The href attribute requires a valid value to be accessible. 
+                    {this.props.descr}
                 </div>
             </div>
         )
